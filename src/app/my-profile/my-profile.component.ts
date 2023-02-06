@@ -9,14 +9,17 @@ import { ActivatedRoute } from '@angular/router';
 export class MyProfileComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
+  user: string | null = "";
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(
       params => {
         let username = params.get('username');
         console.log(username);
+        this.user = username;
+
         //we use it to cache e.g. username and than send request it to server
-        //server.get
+        //server.get/post ...
       }
     );
   }
