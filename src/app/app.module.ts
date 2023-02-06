@@ -9,6 +9,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
     NavBarComponent,
     NotFoundComponent,
     HomeComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -35,10 +37,10 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
         path: 'profile/:username',
         component: MyProfileComponent
       },
-      /*{
+      {
         path: 'posts',
         component: PostComponent
-      },*/
+      },
       {
         path: '**', //handel all others URLs
         component: NotFoundComponent
