@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,35 @@ import { HomeComponent } from './home/home.component';
     MyFollowersComponent,
     NavBarComponent,
     NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    MyProfileComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: HomeComponent
+      },
+      {
+        path: 'followers',
+        component: MyFollowersComponent
+      },
+      {
+        path: 'profile/:username',
+        component: MyProfileComponent
+      },
+      {
+        path: 'posts',
+        component: PostComponent
+      },
+      {
+        path: '**', //handel all others URLs
+        component: NotFoundComponent
+      },
+    ])
   ],
   providers: [
     MyFollowersService

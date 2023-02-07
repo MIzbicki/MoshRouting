@@ -8,7 +8,7 @@
       alt="avatar2"/>
     <span class="d-inline-block">
       <p>{{ follower.login }}</p>
-      <a href="{{ follower.html_url }}">{{ follower.html_url }}</a>
+      <a [routerLink]="['/profile', follower.login]">{{ follower.html_url }}</a>
     </span>
   </li>
 </ul>
